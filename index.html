@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Putnam Coastal Painting | Meghan & Jordan Martinez | York County, Maine</title>
+<title>5-Year Workmanship Warranty | Putnam Coastal Painting | York County, Maine</title>
+<meta name="description" content="Every Putnam Coastal Painting project is backed by our 5-Year Workmanship Warranty. Honest coverage, clear terms, zero arguments. Serving York County, Maine.">
 <link href="https://fonts.googleapis.com/css2?family=Phudu:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -16,15 +17,16 @@
     --accent:  #BACAF5;
     --white:   #ffffff;
     --red:     #E63946;
+    --green:   #1a9d4e;
     --text:    #1a1f36;
     --muted:   #5a6a8a;
   }
 
   html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--navy); overflow-x: hidden; }
+  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
   img { display: block; max-width: 100%; }
 
-  .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 2; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 2; }
 
   /* ── BUTTONS ── */
   .btn {
@@ -64,269 +66,239 @@
   }
   .eyebrow.on-dark { background: rgba(186,202,245,.12); color: var(--accent); }
 
-  /* ════════════════════════════════════════════════════
-     HERO SLAB — full-width photo bg with overlay content
-     ════════════════════════════════════════════════════ */
+  /* ═══════════════════════════════════════════════════
+     HERO — Big certificate-style header
+     ═══════════════════════════════════════════════════ */
   .hero {
-    background: var(--navy); padding: 90px 0 160px; position: relative; overflow: hidden;
+    background: var(--navy); padding: 100px 0 160px; position: relative; overflow: hidden;
+    background-image:
+      radial-gradient(circle at 90% 10%, rgba(0,61,187,.35), transparent 50%),
+      radial-gradient(circle at 10% 90%, rgba(0,61,187,.2), transparent 50%);
   }
-  .hero::after {
-    content:''; position:absolute; right:-200px; top:-100px; width:800px; height:800px;
-    background: radial-gradient(circle, rgba(0,61,187,.4), transparent 60%);
-    z-index: 0;
-  }
-  .hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 2; }
+  .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 80px; align-items: center; }
   .hero h1 {
     font-family: 'Phudu', sans-serif; font-weight: 900;
-    font-size: clamp(40px, 5.8vw, 76px); line-height: .95;
+    font-size: clamp(44px, 6vw, 84px); line-height: .95;
     text-transform: uppercase; color: var(--white); margin-bottom: 28px;
-    letter-spacing: -1.5px;
+    letter-spacing: -2px;
   }
-  .hero h1 .red {
-    color: var(--white); display: inline-block; position: relative; padding: 0 6px;
-  }
-  .hero h1 .red::before {
-    content: ''; position: absolute; inset: -8px -10px; z-index: -1;
-    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 100' preserveAspectRatio='none'><path d='M5 50 Q 30 10, 80 25 T 160 30 T 240 20 T 295 45 Q 280 70, 230 75 T 130 80 T 50 70 T 8 60 Q 0 40, 5 50 Z' fill='none' stroke='%23E63946' stroke-width='4' stroke-linecap='round'/></svg>") no-repeat center/contain;
-    transform: rotate(-1.5deg);
-  }
+  .hero h1 .accent { color: var(--accent); }
+  .hero h1 .number { display: block; }
   .hero-sub { font-size: 19px; line-height: 1.7; color: rgba(255,255,255,.78); margin-bottom: 36px; max-width: 540px; }
   .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
-  .hero-meta { display: flex; gap: 32px; padding-top: 32px; border-top: 1px solid rgba(186,202,245,.15); }
-  .meta-label { font-family: 'Phudu', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
-  .meta-value { font-family: 'Phudu', sans-serif; font-weight: 700; font-size: 22px; color: var(--white); }
+  .hero-trust { display: flex; gap: 32px; padding-top: 28px; border-top: 1px solid rgba(186,202,245,.15); flex-wrap: wrap; }
+  .trust-item { display: flex; align-items: center; gap: 10px; color: var(--accent); font-size: 13px; font-family: 'Phudu', sans-serif; letter-spacing: 1px; text-transform: uppercase; }
+  .trust-item svg { color: var(--white); }
 
-  /* Hero photo with brush */
-  .hero-photo-wrap { position: relative; }
-  .hero-photo {
-    width: 100%; aspect-ratio: 4/5;
-    background: url('https://lightseagreen-herring-539913.hostingersite.com/wp-content/uploads/2026/06/Jordan-martinez-and-meghan-martinez.webp') center/cover;
-    border-radius: 18px; box-shadow: 0 30px 80px rgba(0,0,0,.5); position: relative; z-index: 2;
+  /* Certificate-style card */
+  .certificate {
+    background: var(--white); border-radius: 18px;
+    padding: 50px 40px; text-align: center;
+    box-shadow: 0 40px 100px rgba(0,0,0,.4);
+    position: relative;
+    border: 3px solid var(--accent);
+    transform: rotate(2deg);
+    transition: transform .3s;
   }
-  .red-brush { position: absolute; inset: -22px; z-index: 1; pointer-events: none; }
-  .red-brush svg { width: 100%; height: 100%; }
-  .hero-tags { position: absolute; bottom: 24px; left: 24px; right: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; z-index: 3; }
-  .name-tag { background: var(--white); border-radius: 8px; padding: 12px 16px; box-shadow: 0 8px 24px rgba(0,0,0,.3); }
-  .name-tag .name { font-family: 'Phudu', sans-serif; font-weight: 800; font-size: 14px; color: var(--navy); text-transform: uppercase; letter-spacing: .5px; }
-  .name-tag .role { font-size: 11px; color: var(--muted); margin-top: 2px; }
-
-  /* Photo collage floating accent */
-  .photo-thumb {
-    position: absolute; width: 130px; aspect-ratio: 1/1.2; border-radius: 10px;
-    overflow: hidden; box-shadow: 0 16px 40px rgba(0,0,0,.5);
-    border: 3px solid var(--white); z-index: 3;
+  .certificate:hover { transform: rotate(0deg) scale(1.02); }
+  .certificate::before, .certificate::after {
+    content:''; position:absolute; width:60px; height:60px;
+    border: 3px solid var(--blue); border-radius: 4px;
   }
-  .photo-thumb.tl { top: -30px; left: -50px; transform: rotate(-6deg); }
-  .photo-thumb.br { bottom: 80px; right: -50px; transform: rotate(5deg); width: 150px; }
-  .photo-thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .certificate::before { top:-3px; left:-3px; border-right: none; border-bottom: none; }
+  .certificate::after { bottom:-3px; right:-3px; border-left: none; border-top: none; }
+  .cert-seal {
+    width: 100px; height: 100px; margin: 0 auto 20px;
+    background: var(--blue); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--white); position: relative;
+    box-shadow: 0 12px 32px rgba(0,61,187,.4);
+  }
+  .cert-seal::before {
+    content:''; position:absolute; inset:-12px;
+    border: 2px dashed var(--blue); border-radius: 50%; opacity: .35;
+  }
+  .cert-label { font-family: 'Phudu', sans-serif; font-size: 11px; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; margin-bottom: 12px; }
+  .cert-title { font-family: 'Phudu', sans-serif; font-weight: 900; font-size: 36px; color: var(--navy); text-transform: uppercase; line-height: 1; margin-bottom: 6px; letter-spacing: -1px; }
+  .cert-sub { font-family: 'Phudu', sans-serif; font-size: 14px; color: var(--blue); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 28px; }
+  .cert-issued { padding-top: 20px; border-top: 2px solid var(--light); }
+  .cert-issued-label { font-size: 11px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-bottom: 4px; }
+  .cert-issued-name { font-family: 'Phudu', sans-serif; font-weight: 700; font-size: 16px; color: var(--navy); }
 
   /* angled bottom divider */
   .angle-bottom { position: absolute; bottom: -1px; left: 0; right: 0; height: 100px; z-index: 2; }
   .angle-bottom svg { display: block; width: 100%; height: 100%; }
 
-  /* ════════════════════════════════════════════════════
-     STORY TIMELINE — photo composition
-     ════════════════════════════════════════════════════ */
-  .story-slab { background: var(--white); padding: 140px 0 120px; position: relative; }
-  .story-slab .container { display: grid; grid-template-columns: 200px 1fr 320px; gap: 60px; }
-  .story-rail { position: sticky; top: 120px; align-self: start; border-left: 3px solid var(--accent); padding-left: 24px; }
-  .story-rail .label { font-family: 'Phudu', sans-serif; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--blue); margin-bottom: 8px; }
-  .story-rail h2 { font-family: 'Phudu', sans-serif; font-weight: 900; font-size: 36px; line-height: 1; color: var(--navy); text-transform: uppercase; letter-spacing: -1px; }
-  .story-rail .est { margin-top: 28px; font-family: 'Phudu', sans-serif; font-weight: 900; font-size: 56px; color: var(--blue); line-height: 1; }
-  .story-rail .est-label { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
-  .story-body p { font-size: 18px; line-height: 1.8; color: var(--text); margin-bottom: 24px; }
-  .story-body p.lead { font-size: 24px; line-height: 1.5; color: var(--navy); font-weight: 500; font-family: 'Phudu', sans-serif; }
-  .story-body strong { color: var(--blue); font-weight: 700; }
-  .story-pullquote { border-left: 4px solid var(--blue); padding: 24px 0 24px 28px; margin: 40px 0; font-family: 'Phudu', sans-serif; font-weight: 700; font-size: 22px; line-height: 1.4; color: var(--navy); }
+  /* ═══════════════════════════════════════════════════
+     PROMISE SLAB — The honest statement
+     ═══════════════════════════════════════════════════ */
+  .promise { background: var(--white); padding: 130px 0 100px; }
+  .promise-inner { max-width: 880px; margin: 0 auto; text-align: center; }
+  .promise h2 {
+    font-family: 'Phudu', sans-serif; font-weight: 900;
+    font-size: clamp(32px, 4.5vw, 52px); line-height: 1.05;
+    color: var(--navy); text-transform: uppercase; letter-spacing: -1.5px;
+    margin-bottom: 28px;
+  }
+  .promise h2 .highlight {
+    background: linear-gradient(180deg, transparent 60%, var(--accent) 60%);
+    padding: 0 6px;
+  }
+  .promise-body p {
+    font-size: 18px; line-height: 1.8; color: var(--text);
+    margin-bottom: 20px;
+  }
+  .promise-body p:first-of-type {
+    font-family: 'Phudu', sans-serif; font-size: 22px; font-weight: 500;
+    color: var(--navy); line-height: 1.5;
+  }
 
-  /* Story side photo column */
-  .story-photos { position: sticky; top: 120px; align-self: start; }
-  .story-photo-stack { position: relative; }
-  .story-photo-main { width: 100%; aspect-ratio: 3/4; border-radius: 14px; overflow: hidden; box-shadow: 0 20px 60px rgba(9,18,36,.2); }
-  .story-photo-main img { width: 100%; height: 100%; object-fit: cover; }
-  .story-photo-small { position: absolute; bottom: -40px; left: -40px; width: 160px; aspect-ratio: 1/1; border-radius: 12px; overflow: hidden; border: 5px solid var(--white); box-shadow: 0 16px 40px rgba(9,18,36,.25); }
-  .story-photo-small img { width: 100%; height: 100%; object-fit: cover; }
-  .story-photo-caption {
-    position: absolute; top: 20px; right: -20px;
+  /* ═══════════════════════════════════════════════════
+     COVERAGE GRID — What's covered
+     ═══════════════════════════════════════════════════ */
+  .coverage { background: var(--light); padding: 120px 0; }
+  .coverage-header { text-align: center; max-width: 700px; margin: 0 auto 64px; }
+  .coverage-header h2 {
+    font-family: 'Phudu', sans-serif; font-weight: 900;
+    font-size: clamp(34px, 5vw, 56px); line-height: .95;
+    color: var(--navy); text-transform: uppercase; letter-spacing: -1.5px;
+    margin-bottom: 16px;
+  }
+  .coverage-header p { font-size: 17px; line-height: 1.7; color: var(--muted); }
+  .coverage-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .coverage-card {
+    background: var(--white); border-radius: 16px; padding: 36px;
+    display: flex; gap: 22px; align-items: flex-start;
+    border: 1px solid rgba(186,202,245,.5);
+    transition: transform .2s, box-shadow .2s;
+  }
+  .coverage-card:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(9,18,36,.08); }
+  .coverage-icon {
+    width: 52px; height: 52px; border-radius: 12px;
     background: var(--blue); color: var(--white);
-    padding: 10px 18px; border-radius: 50px;
-    font-family: 'Phudu', sans-serif; font-size: 12px;
-    letter-spacing: 1px; text-transform: uppercase;
-    box-shadow: 0 8px 20px rgba(0,61,187,.4);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
   }
+  .coverage-card h4 {
+    font-family: 'Phudu', sans-serif; font-weight: 800; font-size: 19px;
+    color: var(--navy); text-transform: uppercase; margin-bottom: 10px;
+    letter-spacing: -.3px;
+  }
+  .coverage-card p { font-size: 15px; line-height: 1.65; color: var(--muted); }
 
-  /* ════════════════════════════════════════════════════
-     SPLIT SLAB — Jordan + Meghan with their own photos
-     ════════════════════════════════════════════════════ */
-  .split-slab { background: var(--navy); padding: 140px 0 140px; position: relative; overflow: hidden; }
-  .split-slab::before {
-    content: ''; position: absolute; top: 0; bottom: 0; left: 50%; width: 80px;
-    background: linear-gradient(135deg, transparent 49%, var(--blue) 49%, var(--blue) 51%, transparent 51%);
-    transform: translateX(-50%) skewX(-8deg); opacity: .15;
-  }
-  .split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
-  .person-card {
-    position: relative;
-  }
-  .person-photo-wrap {
-    position: relative; margin-bottom: 32px;
-    border-radius: 18px; overflow: hidden;
-    aspect-ratio: 4/5;
-  }
-  .person-photo-wrap img { width: 100%; height: 100%; object-fit: cover; }
-  .person-photo-wrap::after {
-    content:''; position:absolute; inset:0;
-    background: linear-gradient(180deg, transparent 50%, rgba(9,18,36,.9));
-  }
-  .person-photo-num {
-    position: absolute; top: 20px; left: 24px;
+  /* ═══════════════════════════════════════════════════
+     TWO-COLUMN COVERED / NOT COVERED
+     ═══════════════════════════════════════════════════ */
+  .lists-slab { background: var(--white); padding: 120px 0; }
+  .lists-header { text-align: center; max-width: 700px; margin: 0 auto 56px; }
+  .lists-header h2 {
     font-family: 'Phudu', sans-serif; font-weight: 900;
-    font-size: 80px; line-height: 1; color: var(--white);
-    text-shadow: 0 4px 20px rgba(0,0,0,.5); opacity: .9;
-    z-index: 2;
+    font-size: clamp(34px, 5vw, 52px); color: var(--navy);
+    text-transform: uppercase; line-height: 1; letter-spacing: -1.5px; margin-bottom: 16px;
   }
-  .person-photo-overlay {
-    position: absolute; bottom: 24px; left: 24px; right: 24px; z-index: 2;
+  .lists-header p { font-size: 17px; line-height: 1.7; color: var(--muted); }
+  .lists-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .list-card {
+    background: var(--white); border-radius: 16px; padding: 40px 36px;
+    border: 2px solid;
   }
-  .person-photo-overlay .role-tag {
-    display: inline-block; font-family: 'Phudu', sans-serif; font-size: 11px;
-    letter-spacing: 2px; text-transform: uppercase; color: var(--accent);
-    padding: 4px 12px; background: rgba(0,61,187,.85); border-radius: 50px; margin-bottom: 10px;
+  .list-card.covered { border-color: var(--green); background: linear-gradient(180deg, rgba(26,157,78,.04), transparent); }
+  .list-card.excluded { border-color: var(--muted); background: linear-gradient(180deg, rgba(90,106,138,.04), transparent); }
+  .list-header { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 2px solid; }
+  .list-card.covered .list-header { border-color: var(--green); }
+  .list-card.excluded .list-header { border-color: var(--muted); }
+  .list-header-icon {
+    width: 44px; height: 44px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--white);
   }
-  .person-photo-overlay h3 {
-    font-family: 'Phudu', sans-serif; font-weight: 900;
-    font-size: 36px; line-height: 1; color: var(--white);
-    text-transform: uppercase; letter-spacing: -.5px;
-  }
-  .person-photo-overlay .specialty {
-    font-family: 'Phudu', sans-serif; font-size: 13px; color: var(--accent);
-    letter-spacing: 1px; text-transform: uppercase; margin-top: 6px;
-  }
-  .person-body p {
-    font-size: 16px; line-height: 1.75; color: rgba(255,255,255,.78);
-    margin-bottom: 18px;
-  }
-  .person-body .fact-box {
-    background: rgba(186,202,245,.06);
-    border: 1px solid rgba(186,202,245,.18);
-    border-radius: 12px; padding: 20px;
-    display: flex; gap: 14px; align-items: flex-start; margin-top: 16px;
-  }
-  .person-body .fact-box svg { color: var(--accent); flex-shrink: 0; }
-  .person-body .fact-box div { font-size: 14px; line-height: 1.65; color: var(--accent); }
-  .person-body .fact-box strong { color: var(--white); display: block; font-family: 'Phudu', sans-serif; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+  .list-card.covered .list-header-icon { background: var(--green); }
+  .list-card.excluded .list-header-icon { background: var(--muted); }
+  .list-header h3 { font-family: 'Phudu', sans-serif; font-weight: 800; font-size: 22px; color: var(--navy); text-transform: uppercase; letter-spacing: -.5px; }
+  .list-card ul { list-style: none; }
+  .list-card li { padding: 12px 0; padding-left: 32px; position: relative; font-size: 16px; line-height: 1.6; color: var(--text); border-bottom: 1px solid var(--light); }
+  .list-card li:last-child { border-bottom: none; }
+  .list-card li::before { position: absolute; left: 0; top: 14px; font-family: 'Phudu', sans-serif; font-weight: 900; font-size: 18px; }
+  .list-card.covered li::before { content: '✓'; color: var(--green); }
+  .list-card.excluded li::before { content: '×'; color: var(--muted); font-size: 22px; top: 11px; }
 
-  /* ════════════════════════════════════════════════════
-     FAITH SLAB — Yard sign + photo backdrop
-     ════════════════════════════════════════════════════ */
-  .faith-slab { background: var(--white); padding: 140px 0 140px; position: relative; overflow: hidden; }
-  .faith-grid { display: grid; grid-template-columns: 400px 1fr; gap: 80px; align-items: center; position: relative; z-index: 2; }
-  .yard-sign-wrap { position: relative; }
-  .yard-grass {
-    position: absolute; bottom: -30px; left: -30px; right: -30px; height: 100px;
-    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 100' preserveAspectRatio='none'><path d='M0 100 L0 80 Q 10 70 20 80 T 40 80 T 60 75 T 80 80 T 100 70 T 130 80 T 160 75 T 190 82 T 220 70 T 250 80 T 280 75 T 310 80 T 340 70 T 370 80 T 400 75 L400 100 Z' fill='%23BACAF5' opacity='0.4'/></svg>") no-repeat center/cover;
+  /* ═══════════════════════════════════════════════════
+     HOW IT WORKS — 3 steps
+     ═══════════════════════════════════════════════════ */
+  .process { background: var(--navy); padding: 120px 0; color: var(--white); position: relative; }
+  .process-header { text-align: center; max-width: 680px; margin: 0 auto 64px; }
+  .process-header h2 {
+    font-family: 'Phudu', sans-serif; font-weight: 900;
+    font-size: clamp(34px, 5vw, 56px); color: var(--white);
+    text-transform: uppercase; line-height: .95; letter-spacing: -1.5px; margin-bottom: 16px;
+  }
+  .process-header p { font-size: 17px; line-height: 1.7; color: rgba(255,255,255,.7); }
+  .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; position: relative; }
+  .process-grid::before {
+    content: ''; position: absolute; top: 32px; left: 16%; right: 16%; height: 2px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent) 50%, transparent 50%, transparent 100%);
+    background-size: 16px 2px; background-repeat: repeat-x;
     z-index: 0;
   }
-  .yard-sign { position: relative; transform: rotate(-4deg); transition: transform .3s; z-index: 1; }
-  .yard-sign:hover { transform: rotate(-2deg) scale(1.03); }
-  .sign-board { background: var(--blue); color: var(--white); border-radius: 12px; padding: 36px 28px; box-shadow: 0 24px 60px rgba(0,61,187,.35); text-align: center; border: 4px solid var(--white); position: relative; }
-  .sign-board::before, .sign-board::after { content: ''; position: absolute; bottom: -50px; width: 6px; height: 60px; background: #4a4a4a; }
-  .sign-board::before { left: 24%; }
-  .sign-board::after { right: 24%; }
-  .sign-board .sign-logo { font-family: 'Phudu', sans-serif; font-weight: 900; font-size: 26px; letter-spacing: -.5px; line-height: 1; }
-  .sign-board .sign-tagline { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin: 8px 0 20px; }
-  .sign-board .sign-phone { font-family: 'Phudu', sans-serif; font-weight: 900; font-size: 22px; padding: 12px 0; border-top: 2px solid rgba(255,255,255,.2); border-bottom: 2px solid rgba(255,255,255,.2); }
-  .sign-board .sign-badge { margin-top: 16px; font-size: 11px; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; }
+  .process-step { text-align: center; position: relative; z-index: 1; }
+  .step-number {
+    width: 64px; height: 64px; border-radius: 50%; background: var(--blue);
+    color: var(--white); font-family: 'Phudu', sans-serif; font-weight: 900;
+    font-size: 26px; display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 28px; border: 4px solid var(--navy);
+    box-shadow: 0 0 0 4px var(--accent);
+  }
+  .process-step h4 { font-family: 'Phudu', sans-serif; font-weight: 800; font-size: 22px; color: var(--white); text-transform: uppercase; margin-bottom: 14px; letter-spacing: -.5px; }
+  .process-step p { font-size: 15px; line-height: 1.7; color: rgba(255,255,255,.72); }
 
-  .faith-content { padding-left: 20px; }
-  .faith-content .massive-quote {
+  /* ═══════════════════════════════════════════════════
+     STATS BAR
+     ═══════════════════════════════════════════════════ */
+  .stats { background: var(--blue); padding: 60px 0; }
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center; }
+  .stat-item { padding: 0 16px; border-right: 1px solid rgba(255,255,255,.2); }
+  .stat-item:last-child { border-right: none; }
+  .stat-num { font-family: 'Phudu', sans-serif; font-weight: 900; font-size: clamp(36px, 4vw, 52px); color: var(--white); line-height: 1; display: block; }
+  .stat-label { color: var(--accent); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-top: 8px; font-family: 'Phudu', sans-serif; }
+
+  /* ═══════════════════════════════════════════════════
+     FAQ
+     ═══════════════════════════════════════════════════ */
+  .faq { background: var(--white); padding: 120px 0; }
+  .faq-header { text-align: center; max-width: 700px; margin: 0 auto 56px; }
+  .faq-header h2 {
     font-family: 'Phudu', sans-serif; font-weight: 900;
-    font-size: clamp(28px, 4.2vw, 52px); line-height: 1.05;
-    color: var(--navy); text-transform: uppercase;
-    margin: 20px 0 32px; letter-spacing: -1.5px;
+    font-size: clamp(34px, 5vw, 52px); color: var(--navy);
+    text-transform: uppercase; line-height: 1; letter-spacing: -1.5px; margin-bottom: 16px;
   }
-  .faith-content .massive-quote .highlight {
-    background: linear-gradient(180deg, transparent 60%, var(--accent) 60%);
-    padding: 0 4px;
+  .faq-header p { font-size: 17px; line-height: 1.7; color: var(--muted); }
+  .faq-list { max-width: 880px; margin: 0 auto; }
+  .faq-item {
+    background: var(--white); border: 1px solid rgba(186,202,245,.5);
+    border-radius: 14px; margin-bottom: 14px; overflow: hidden;
+    transition: border-color .2s;
   }
-  .faith-content p { font-size: 17px; line-height: 1.7; color: var(--muted); margin-bottom: 14px; }
-  .faith-content .attribution { display: flex; align-items: center; gap: 16px; margin-top: 32px; padding-top: 24px; border-top: 2px solid var(--light); }
-  .faith-content .attribution-avatar {
-    width: 56px; height: 56px; border-radius: 50%; overflow: hidden;
-    border: 3px solid var(--blue); flex-shrink: 0;
+  .faq-item[open] { border-color: var(--blue); box-shadow: 0 12px 32px rgba(0,61,187,.08); }
+  .faq-item summary {
+    padding: 24px 28px; cursor: pointer; list-style: none;
+    display: flex; align-items: center; justify-content: space-between;
+    font-family: 'Phudu', sans-serif; font-weight: 700; font-size: 17px;
+    color: var(--navy); text-transform: uppercase; letter-spacing: -.3px;
   }
-  .faith-content .attribution-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
-  .faith-content .attribution strong { font-family: 'Phudu', sans-serif; font-size: 16px; color: var(--navy); text-transform: uppercase; letter-spacing: .5px; display: block; }
-  .faith-content .attribution span { color: var(--muted); font-size: 14px; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+'; font-family: 'Phudu', sans-serif; font-weight: 900;
+    font-size: 28px; color: var(--blue); line-height: 1;
+    transition: transform .3s;
+  }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-answer { padding: 0 28px 24px; font-size: 16px; line-height: 1.75; color: var(--muted); }
 
-  /* ════════════════════════════════════════════════════
-     CRAFT GALLERY SLAB — real work, real homes
-     ════════════════════════════════════════════════════ */
-  .craft-slab { background: var(--white); padding: 100px 0 140px; }
-  .craft-header { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: end; margin-bottom: 56px; }
-  .craft-header h2 { font-family: 'Phudu', sans-serif; font-weight: 900; font-size: clamp(36px, 5vw, 60px); line-height: .95; color: var(--navy); text-transform: uppercase; letter-spacing: -1.5px; }
-  .craft-header p { font-size: 17px; line-height: 1.7; color: var(--muted); }
-  .craft-gallery {
-    display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 120px; gap: 16px;
-  }
-  .craft-tile { position: relative; border-radius: 14px; overflow: hidden; }
-  .craft-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
-  .craft-tile:hover img { transform: scale(1.05); }
-  .craft-tile .tile-label {
-    position: absolute; bottom: 12px; left: 14px;
-    background: rgba(9,18,36,.85); color: var(--white);
-    padding: 6px 12px; border-radius: 50px;
-    font-family: 'Phudu', sans-serif; font-size: 11px;
-    letter-spacing: 1px; text-transform: uppercase;
-  }
-  .craft-tile.tile-1 { grid-column: span 5; grid-row: span 3; }
-  .craft-tile.tile-2 { grid-column: span 4; grid-row: span 2; }
-  .craft-tile.tile-3 { grid-column: span 3; grid-row: span 2; }
-  .craft-tile.tile-4 { grid-column: span 4; grid-row: span 1; }
-  .craft-tile.tile-5 { grid-column: span 3; grid-row: span 1; }
-
-  /* ════════════════════════════════════════════════════
-     VALUES SLAB — Numbered 01-06
-     ════════════════════════════════════════════════════ */
-  .values-slab { background: var(--accent); padding: 130px 0 140px; position: relative; }
-  .values-header { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end; margin-bottom: 60px; }
-  .values-header h2 { font-family: 'Phudu', sans-serif; font-weight: 900; font-size: clamp(36px, 5vw, 64px); line-height: .95; color: var(--navy); text-transform: uppercase; letter-spacing: -1.5px; }
-  .values-header p { font-size: 17px; line-height: 1.7; color: var(--navy); }
-  .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 2px solid var(--navy); border-left: 2px solid var(--navy); }
-  .value-cell { background: var(--accent); padding: 32px; border-right: 2px solid var(--navy); border-bottom: 2px solid var(--navy); transition: background .2s; position: relative; }
-  .value-cell:hover { background: var(--white); }
-  .value-cell .num { font-family: 'Phudu', sans-serif; font-weight: 900; font-size: 32px; color: var(--blue); line-height: 1; display: block; margin-bottom: 20px; }
-  .value-cell h4 { font-family: 'Phudu', sans-serif; font-weight: 800; font-size: 19px; color: var(--navy); text-transform: uppercase; margin-bottom: 12px; line-height: 1.15; }
-  .value-cell p { font-size: 14px; line-height: 1.65; color: var(--navy); opacity: .82; }
-
-  /* ════════════════════════════════════════════════════
-     TRUCK BANNER SLAB
-     ════════════════════════════════════════════════════ */
-  .truck-slab {
-    background: var(--navy); padding: 120px 0; position: relative; overflow: hidden;
-  }
-  .truck-bg {
-    position: absolute; inset: 0;
-    background: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1800&q=70') center/cover;
-    opacity: .35;
-  }
-  .truck-bg::after {
-    content:''; position:absolute; inset:0;
-    background: linear-gradient(90deg, var(--navy) 0%, rgba(9,18,36,.5) 60%, transparent 100%);
-  }
-  .truck-slab .container { max-width: 800px; margin-left: 0; padding-left: 8%; position: relative; z-index: 2; }
-  .truck-slab h2 { font-family: 'Phudu', sans-serif; font-weight: 900; font-size: clamp(36px, 5.5vw, 68px); line-height: 1; color: var(--white); text-transform: uppercase; margin-bottom: 20px; letter-spacing: -1.5px; }
-  .truck-slab h2 .accent-word { color: var(--accent); }
-  .truck-slab p { font-size: 18px; line-height: 1.7; color: rgba(255,255,255,.85); margin-bottom: 28px; max-width: 560px; }
-  .truck-stats { display: flex; gap: 40px; margin-top: 32px; }
-  .truck-stat .n { font-family: 'Phudu', sans-serif; font-weight: 900; font-size: 36px; color: var(--accent); line-height: 1; }
-  .truck-stat .l { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--white); opacity: .7; margin-top: 4px; }
-
-  /* ════════════════════════════════════════════════════
-     FINAL CTA SLAB
-     ════════════════════════════════════════════════════ */
+  /* ═══════════════════════════════════════════════════
+     FINAL CTA — Yard sign
+     ═══════════════════════════════════════════════════ */
   .cta-slab {
-    background: var(--navy); padding: 140px 0 100px;
+    background: var(--navy); padding: 140px 0 120px;
     text-align: center; position: relative; overflow: hidden;
   }
   .cta-slab::before {
@@ -336,10 +308,15 @@
       radial-gradient(circle at 80% 0%, rgba(186,202,245,.1), transparent 50%);
   }
   .cta-slab .container { position: relative; z-index: 2; }
-  .cta-slab h2 { font-family: 'Phudu', sans-serif; font-weight: 900; font-size: clamp(40px, 6vw, 76px); line-height: .95; color: var(--white); text-transform: uppercase; margin-bottom: 24px; letter-spacing: -1.5px; max-width: 900px; margin-left: auto; margin-right: auto; }
+  .cta-slab h2 {
+    font-family: 'Phudu', sans-serif; font-weight: 900;
+    font-size: clamp(38px, 5.5vw, 68px); line-height: .95;
+    color: var(--white); text-transform: uppercase; margin-bottom: 24px;
+    letter-spacing: -1.5px; max-width: 880px; margin-left: auto; margin-right: auto;
+  }
   .cta-slab h2 .accent { color: var(--accent); }
   .cta-slab p { font-size: 18px; color: rgba(255,255,255,.75); max-width: 600px; margin: 0 auto 40px; line-height: 1.7; }
-  .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 56px; }
+  .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
   .cta-phone { display: inline-flex; align-items: center; gap: 16px; background: rgba(186,202,245,.08); border: 1px solid rgba(186,202,245,.25); border-radius: 50px; padding: 14px 32px; color: var(--accent); font-family: 'Phudu', sans-serif; font-weight: 700; font-size: 18px; text-decoration: none; }
   .cta-phone span { color: var(--white); }
 
@@ -355,36 +332,27 @@
   .footer-bottom { border-top: 1px solid rgba(186,202,245,.08); padding-top: 24px; display: flex; justify-content: space-between; color: rgba(255,255,255,.4); font-size: 13px; }
 
   /* ── RESPONSIVE ── */
-  @media (max-width: 1100px) {
-    .story-slab .container { grid-template-columns: 1fr; gap: 40px; }
-    .story-rail, .story-photos { position: static; }
-    .story-photos { max-width: 400px; margin: 0 auto; }
-    .craft-gallery { grid-template-columns: repeat(6, 1fr); grid-auto-rows: 140px; }
-    .craft-tile.tile-1 { grid-column: span 6; grid-row: span 2; }
-    .craft-tile.tile-2, .craft-tile.tile-3 { grid-column: span 3; grid-row: span 2; }
-    .craft-tile.tile-4 { grid-column: span 4; }
-    .craft-tile.tile-5 { grid-column: span 2; }
-  }
-  @media (max-width: 900px) {
-    .hero-grid, .split-grid, .faith-grid, .values-header, .craft-header { grid-template-columns: 1fr; gap: 60px; }
-    .photo-thumb.tl, .photo-thumb.br { display: none; }
-    .truck-slab .container { padding-left: 32px; }
-    .values-grid { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 1000px) {
+    .hero-grid, .coverage-grid, .lists-grid, .process-grid { grid-template-columns: 1fr; gap: 40px; }
+    .process-grid::before { display: none; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .stat-item { border-right: none; }
+    .stat-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.2); }
     .footer-grid { grid-template-columns: 1fr 1fr; }
+    .certificate { transform: rotate(0deg); max-width: 460px; margin: 0 auto; }
   }
   @media (max-width: 640px) {
     .container { padding: 0 20px; }
     .hero { padding: 60px 0 100px; }
-    .hero h1 { font-size: 40px; }
-    .hero-meta { flex-direction: column; gap: 16px; }
-    .story-slab, .split-slab, .faith-slab, .values-slab, .truck-slab, .cta-slab, .craft-slab { padding: 80px 0; }
-    .values-grid { grid-template-columns: 1fr; }
-    .truck-stats { gap: 20px; flex-wrap: wrap; }
+    .promise, .coverage, .lists-slab, .process, .faq, .cta-slab { padding: 80px 0; }
     .nav-links { display: none; }
-    .craft-gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 130px; }
-    .craft-tile.tile-1 { grid-column: span 2; grid-row: span 2; }
-    .craft-tile.tile-2, .craft-tile.tile-3, .craft-tile.tile-4, .craft-tile.tile-5 { grid-column: span 1; grid-row: span 1; }
+    .hero-trust { gap: 16px; }
+    .stats-grid { grid-template-columns: 1fr; }
+    .stat-item { border-right: none !important; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,.15); }
+    .stat-item:last-child { border-bottom: none; }
     .footer-grid { grid-template-columns: 1fr; }
+    .certificate { padding: 36px 24px; }
+    .cert-title { font-size: 28px; }
   }
 </style>
 </head>
@@ -409,9 +377,9 @@
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="/services">Services</a></li>
-        <li><a href="/about" class="active">About Us</a></li>
+        <li><a href="/about">About Us</a></li>
         <li><a href="/past-work">Past Work</a></li>
-        <li><a href="/blog">Blog</a></li>
+        <li><a href="/warranty" class="active">Warranty</a></li>
         <li><a href="/contact-us">Contact</a></li>
       </ul>
       <a href="/free-estimate" class="btn" style="padding:12px 24px;font-size:12px;">Free Estimate</a>
@@ -424,170 +392,44 @@
   <div class="container">
     <div class="hero-grid">
       <div>
-        <span class="eyebrow on-dark">Our Story</span>
-        <h1>Not a Brand.<br>A <span class="red">Family</span><br>From Kennebunk.</h1>
-        <p class="hero-sub">Meghan and Jordan Martinez built Putnam Coastal Painting one home at a time. No franchise. No sales team. Just two people, one shared standard, and a community we are not willing to let down.</p>
+        <span class="eyebrow on-dark">Our Promise</span>
+        <h1>
+          <span class="number"><span class="accent">5-Year</span></span>
+          Workmanship<br>Warranty.
+        </h1>
+        <p class="hero-sub">Every project we complete is backed by our 5-Year Workmanship Warranty. If something is not right, we come back and make it right. No arguments, no delays, no fine-print games.</p>
         <div class="hero-cta">
           <a href="/free-estimate" class="btn">Get a Free Estimate</a>
-          <a href="/past-work" class="btn btn-ghost">See Our Work</a>
+          <a href="#coverage" class="btn btn-ghost">What's Covered</a>
         </div>
-        <div class="hero-meta">
-          <div><div class="meta-label">Founded</div><div class="meta-value">2014</div></div>
-          <div><div class="meta-label">Based In</div><div class="meta-value">Kennebunk, ME</div></div>
-          <div><div class="meta-label">Homes Painted</div><div class="meta-value">500+</div></div>
-        </div>
-      </div>
-      <div class="hero-photo-wrap">
-        <!-- floating thumbnails for collage feel -->
-        <div class="photo-thumb tl">
-          <img src="https://images.unsplash.com/photo-1632173424029-c93f8056ec57?w=400&q=70" alt="House painting in progress">
-        </div>
-        <div class="red-brush">
-          <svg viewBox="0 0 500 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M 30 60 Q 5 200, 20 350 T 40 540 Q 80 580, 200 575 T 380 580 Q 470 570, 480 480 T 475 200 T 450 50 Q 380 20, 280 25 T 100 30 Q 50 35, 30 60 Z" fill="none" stroke="#E63946" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
-            <path d="M 50 80 Q 30 250, 45 480 Q 70 560, 220 555 T 420 555 Q 455 530, 450 320 T 430 100 Q 350 50, 200 55 T 80 70 Z" fill="none" stroke="#E63946" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
-          </svg>
-        </div>
-        <div class="hero-photo"></div>
-        <div class="hero-tags">
-          <div class="name-tag">
-            <div class="name">Meghan Martinez</div>
-            <div class="role">Cabinet Specialist</div>
+        <div class="hero-trust">
+          <div class="trust-item">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z"/><path d="M9 12l2 2 4-4"/></svg>
+            Licensed & Insured
           </div>
-          <div class="name-tag">
-            <div class="name">Jordan Martinez</div>
-            <div class="role">Lead Painter</div>
+          <div class="trust-item">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            PCA Accredited
           </div>
-        </div>
-        <div class="photo-thumb br">
-          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=70" alt="Cabinet refinishing detail work">
-        </div>
-      </div>
-    </div>
-  </div>
-  <svg class="angle-bottom" preserveAspectRatio="none" viewBox="0 0 1400 100" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 100 L0 70 L700 0 L1400 70 L1400 100 Z" fill="#BACAF5"/>
-    <path d="M0 100 L0 85 L700 20 L1400 85 L1400 100 Z" fill="#ffffff"/>
-  </svg>
-</section>
-
-<!-- ═══════ STORY TIMELINE ═══════ -->
-<section class="story-slab">
-  <div class="container">
-    <aside class="story-rail">
-      <div class="label">Chapter 01</div>
-      <h2>How It<br>Started</h2>
-      <div class="est">2014</div>
-      <div class="est-label">Year Established</div>
-    </aside>
-    <div class="story-body">
-      <p class="lead">Jordan did not set out to start a painting company.</p>
-      <p>He found his calling restoring old oceanfront homes along the Maine coast — homes that had been beaten by salt air, UV exposure, and a hundred freeze-and-thaw cycles a year. He saw what the right paint, applied the right way, could do for a weathered home. The craft pulled him in.</p>
-      <p>Every prep step became deliberate. Every product choice became intentional. Every brushstroke had to earn its place. That obsession became <strong>Putnam Coastal Painting.</strong></p>
-      <div class="story-pullquote">"I truly love my work, and it shows in every project we undertake."</div>
-      <p>Meghan brought what Jordan could not. While Jordan refined the craft on the ladder, Meghan built the business behind it — answering calls, managing schedules, mastering cabinet refinishing as her own specialty, and making sure every client felt heard from the first phone call to the final walkthrough.</p>
-      <p>Together they grew slowly, project by project, referral by referral. No marketing tricks. No outsourcing. Just two people committed to a single standard: <strong>do the work right whether anyone is watching or not.</strong></p>
-    </div>
-    <aside class="story-photos">
-      <div class="story-photo-stack">
-        <div class="story-photo-main">
-          <img src="https://images.unsplash.com/photo-1564540583246-934409427776?w=600&q=70" alt="Coastal Maine home painting">
-        </div>
-        <div class="story-photo-caption">Maine Coast · 2014</div>
-        <div class="story-photo-small">
-          <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=400&q=70" alt="Painted Maine home detail">
-        </div>
-      </div>
-    </aside>
-  </div>
-</section>
-
-<!-- ═══════ SPLIT — JORDAN / MEGHAN ═══════ -->
-<section class="split-slab">
-  <div class="container">
-    <div class="split-grid">
-
-      <!-- JORDAN -->
-      <div class="person-card">
-        <div class="person-photo-wrap">
-          <img src="https://images.unsplash.com/photo-1572297870735-71fd86eb5e08?w=800&q=75" alt="Jordan Martinez — lead painter and coastal restoration specialist">
-          <span class="person-photo-num">01</span>
-          <div class="person-photo-overlay">
-            <span class="role-tag">The Painter</span>
-            <h3>Jordan Martinez</h3>
-            <div class="specialty">Coastal Restoration · Exterior Specialist</div>
-          </div>
-        </div>
-        <div class="person-body">
-          <p>Jordan leads every exterior project personally. Ten plus years on Maine's coast taught him which products survive the salt air and which ones fail by year two. He's the reason our exterior work lasts 8 to 12 years instead of the industry average 5.</p>
-          <p>If your home is within half a mile of the ocean, Jordan probably already knows the right primer, the right topcoat, and the right number of coats before he sets foot on the property.</p>
-          <div class="fact-box">
-            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z"/><path d="M9 12l2 2 4-4"/></svg>
-            <div>
-              <strong>Jordan's Standard</strong>
-              Festool dust-free sanding on every project. No exceptions. No shortcuts. Cleaner prep means longer-lasting paint.
-            </div>
+          <div class="trust-item">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+            Written Coverage
           </div>
         </div>
       </div>
-
-      <!-- MEGHAN -->
-      <div class="person-card">
-        <div class="person-photo-wrap">
-          <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&q=75" alt="Meghan Martinez — cabinet refinishing specialist and client relations">
-          <span class="person-photo-num">02</span>
-          <div class="person-photo-overlay">
-            <span class="role-tag">The Operator</span>
-            <h3>Meghan Martinez</h3>
-            <div class="specialty">Cabinet Refinishing · Client Relations</div>
+      <div>
+        <div class="certificate">
+          <div class="cert-seal">
+            <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z"/><path d="M9 12l2 2 4-4"/></svg>
           </div>
-        </div>
-        <div class="person-body">
-          <p>Meghan is the reason every project runs smoothly. She specializes in cabinet refinishing — taking tired kitchens and bathrooms and making them look factory-new at a fraction of replacement cost. No demolition. No weeks without a kitchen.</p>
-          <p>She is also your point of contact from first call to final walkthrough. When you reach out, you talk to Meghan. When you have a question mid-project, you call Meghan. That continuity is deliberate.</p>
-          <div class="fact-box">
-            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
-            <div>
-              <strong>Meghan's Specialty</strong>
-              Cabinet refinishing that looks indistinguishable from new — done in days, not weeks.
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════ FAITH SLAB ═══════ -->
-<section class="faith-slab">
-  <div class="container">
-    <div class="faith-grid">
-      <div class="yard-sign-wrap">
-        <div class="yard-grass"></div>
-        <div class="yard-sign">
-          <div class="sign-board">
-            <div class="sign-logo">PUTNAM<br>COASTAL<br>PAINTING</div>
-            <div class="sign-tagline">Family Owned · Maine</div>
-            <div class="sign-phone">(207) 890-7305</div>
-            <div class="sign-badge">★ Licensed · Insured · PCA ★</div>
-          </div>
-        </div>
-      </div>
-      <div class="faith-content">
-        <span class="eyebrow">What Drives Us</span>
-        <div class="massive-quote">
-          What we do in <span class="highlight">secret</span> will always come to <span class="highlight">light</span>.
-        </div>
-        <p>That belief shapes every decision we make — from how we prep a surface you will never see, to how we handle a problem that comes up mid-project, to how we back every job with a 5-year workmanship warranty with zero arguments.</p>
-        <p>We are not building a painting business. We are building a reputation in a community we call home.</p>
-        <div class="attribution">
-          <div class="attribution-avatar">
-            <img src="https://lightseagreen-herring-539913.hostingersite.com/wp-content/uploads/2026/06/Jordan-martinez-and-meghan-martinez.webp" alt="Meghan and Jordan Martinez">
-          </div>
-          <div>
-            <strong>Meghan & Jordan Martinez</strong>
-            <span>Owners · Kennebunk, ME</span>
+          <div class="cert-label">Certificate of Coverage</div>
+          <div class="cert-title">5 YEAR</div>
+          <div class="cert-sub">Workmanship Warranty</div>
+          <p style="font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:8px;">Backed by Putnam Coastal Painting LLC for the full duration of coverage on every completed project.</p>
+          <div class="cert-issued">
+            <div class="cert-issued-label">Issued By</div>
+            <div class="cert-issued-name">Meghan & Jordan Martinez</div>
+            <div style="font-size:13px;color:var(--muted);margin-top:2px;">Kennebunk, Maine</div>
           </div>
         </div>
       </div>
@@ -595,68 +437,251 @@
   </div>
 </section>
 
-<!-- ═══════ CRAFT GALLERY ═══════ -->
-<section class="craft-slab">
+<!-- ═══════ STATS BAR ═══════ -->
+<section class="stats">
   <div class="container">
-    <div class="craft-header">
-      <h2>The Craft Speaks for Itself.</h2>
-      <p>Real homes. Real York County. Real before and afters. We let our work do the convincing, not our marketing copy. Browse a small slice of what we have completed across coastal Maine.</p>
-    </div>
-    <div class="craft-gallery">
-      <div class="craft-tile tile-1">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=70" alt="Exterior painting Maine coastal home">
-        <span class="tile-label">Exterior · Kennebunkport</span>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-num">5yr</span>
+        <div class="stat-label">Coverage Period</div>
       </div>
-      <div class="craft-tile tile-2">
-        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=70" alt="Cabinet refinishing York Maine">
-        <span class="tile-label">Cabinet Refinishing</span>
+      <div class="stat-item">
+        <span class="stat-num">500+</span>
+        <div class="stat-label">Projects Backed</div>
       </div>
-      <div class="craft-tile tile-3">
-        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=400&q=70" alt="Interior painting Maine">
-        <span class="tile-label">Interior</span>
+      <div class="stat-item">
+        <span class="stat-num">$0</span>
+        <div class="stat-label">Cost to You</div>
       </div>
-      <div class="craft-tile tile-4">
-        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=600&q=70" alt="Coastal home Wells Maine">
-        <span class="tile-label">Wells, ME</span>
-      </div>
-      <div class="craft-tile tile-5">
-        <img src="https://images.unsplash.com/photo-1597177260878-b6c7c70cb5fc?w=400&q=70" alt="Drywall and skim coating">
-        <span class="tile-label">Skim Coat</span>
+      <div class="stat-item">
+        <span class="stat-num">100%</span>
+        <div class="stat-label">In Writing</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════ VALUES ═══════ -->
-<section class="values-slab">
+<!-- ═══════ PROMISE ═══════ -->
+<section class="promise">
   <div class="container">
-    <div class="values-header">
-      <h2>Six Reasons<br>York County<br>Trusts Us.</h2>
-      <p>We could list ten. These are the six that matter most when you are choosing who gets the keys to your home for two weeks.</p>
-    </div>
-    <div class="values-grid">
-      <div class="value-cell"><span class="num">01</span><h4>Coastal Climate Expertise</h4><p>Hundreds of oceanfront homes painted. We know exactly which products survive salt air and freeze cycles, and which ones fail.</p></div>
-      <div class="value-cell"><span class="num">02</span><h4>Festool Dust-Free Sanding</h4><p>Professional equipment on every project. Cleaner prep, better adhesion, zero dust through your house when we leave.</p></div>
-      <div class="value-cell"><span class="num">03</span><h4>Se Habla Español</h4><p>Full bilingual service. Every estimate, every walkthrough, every conversation in the language you are most comfortable with.</p></div>
-      <div class="value-cell"><span class="num">04</span><h4>Transparent Pricing</h4><p>The number on your estimate is the number on your invoice. No add-ons mid-project. We accept credit card, Zelle, Venmo.</p></div>
-      <div class="value-cell"><span class="num">05</span><h4>5-Year Workmanship Warranty</h4><p>Something not right? We come back and fix it. No arguments. No delays. The warranty is in writing on every project.</p></div>
-      <div class="value-cell"><span class="num">06</span><h4>Locally Owned. Locally Accountable.</h4><p>We live where we paint. Our kids go to school here. We are not a franchise that disappears when something goes wrong.</p></div>
+    <div class="promise-inner">
+      <span class="eyebrow">Why We Stand Behind Our Work</span>
+      <h2>The work you cannot see is the work that <span class="highlight">matters most.</span></h2>
+      <div class="promise-body">
+        <p>The prep we never charge extra for. The extra coat we apply without asking. The corners we caulk where nobody will check. That is where a real paint job is built.</p>
+        <p>We offer a 5-Year Workmanship Warranty because we already do the work that earns it. The warranty is not a marketing line. It is a written commitment that what we did when nobody was watching will hold up for years to come.</p>
+        <p>If our workmanship fails within five years, we come back. We fix it. We do not argue about it. That is the standard Meghan and Jordan built this company on, and it is the standard every member of our team holds themselves to.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════ TRUCK / ROOTED ═══════ -->
-<section class="truck-slab">
-  <div class="truck-bg"></div>
+<!-- ═══════ COVERAGE GRID ═══════ -->
+<section class="coverage" id="coverage">
   <div class="container">
-    <span class="eyebrow on-dark">Our Community</span>
-    <h2>Rooted in<br><span class="accent-word">Kennebunk,</span><br>Maine.</h2>
-    <p>We are not a franchise. We are not a national chain. We are Meghan and Jordan Martinez, working out of 172 Kennebunk Rd, painting homes in communities where our kids go to school, where we shop for groceries, where we go to church.</p>
-    <a href="/service-area" class="btn">View Service Area</a>
-    <div class="truck-stats">
-      <div class="truck-stat"><div class="n">20+</div><div class="l">Cities Served</div></div>
-      <div class="truck-stat"><div class="n">2</div><div class="l">Counties</div></div>
-      <div class="truck-stat"><div class="n">100%</div><div class="l">Locally Operated</div></div>
+    <div class="coverage-header">
+      <span class="eyebrow">Coverage Areas</span>
+      <h2>What Our Warranty Covers</h2>
+      <p>If any of the following happens within five years of project completion due to our workmanship, we come back and fix it at zero cost to you.</p>
+    </div>
+    <div class="coverage-grid">
+
+      <div class="coverage-card">
+        <div class="coverage-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <div>
+          <h4>Paint Peeling or Flaking</h4>
+          <p>If paint lifts, flakes, or peels from a properly prepared surface, we return to scrape, re-prime, and repaint the affected area.</p>
+        </div>
+      </div>
+
+      <div class="coverage-card">
+        <div class="coverage-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div>
+          <h4>Cracking or Splitting</h4>
+          <p>Paint cracks or splits from a properly prepped surface within five years are covered under our workmanship guarantee.</p>
+        </div>
+      </div>
+
+      <div class="coverage-card">
+        <div class="coverage-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+        </div>
+        <div>
+          <h4>Surface Preparation Failures</h4>
+          <p>Any failure traceable to our prep work — improper sanding, missed primer, inadequate caulking — is corrected on us.</p>
+        </div>
+      </div>
+
+      <div class="coverage-card">
+        <div class="coverage-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <div>
+          <h4>Cabinet Refinish Failures</h4>
+          <p>Cabinet refinishing that chips, peels, or fails due to our application is fully covered including all touch-up materials.</p>
+        </div>
+      </div>
+
+      <div class="coverage-card">
+        <div class="coverage-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6"/><path d="M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+        </div>
+        <div>
+          <h4>Coastal Climate Failure</h4>
+          <p>Premature fading, blistering, or weather-related failure on properly prepped exteriors near the Maine coast is on us to correct.</p>
+        </div>
+      </div>
+
+      <div class="coverage-card">
+        <div class="coverage-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        </div>
+        <div>
+          <h4>Drywall Repair Failures</h4>
+          <p>Skim coat or drywall repair that cracks, sags, or fails within the warranty period is corrected at no charge to you.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ COVERED / NOT COVERED ═══════ -->
+<section class="lists-slab">
+  <div class="container">
+    <div class="lists-header">
+      <span class="eyebrow">Clear and Honest</span>
+      <h2>What's In. What's Out.</h2>
+      <p>We believe in clarity. Here is exactly what our warranty covers and what falls outside it. No fine print, no gotchas.</p>
+    </div>
+    <div class="lists-grid">
+
+      <div class="list-card covered">
+        <div class="list-header">
+          <div class="list-header-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>What's Covered</h3>
+        </div>
+        <ul>
+          <li>Premature paint peeling, flaking, or blistering</li>
+          <li>Cracking, splitting, or checking of paint film</li>
+          <li>Application defects from our team's workmanship</li>
+          <li>Surface preparation failures we are responsible for</li>
+          <li>Cabinet refinishing finish failures</li>
+          <li>Drywall and skim coat repair failures</li>
+          <li>Caulking joint failures we applied</li>
+          <li>Color uniformity issues from our application</li>
+          <li>Free touch-ups and repaints for any covered issue</li>
+        </ul>
+      </div>
+
+      <div class="list-card excluded">
+        <div class="list-header">
+          <div class="list-header-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </div>
+          <h3>What's Not Covered</h3>
+        </div>
+        <ul>
+          <li>Damage from extreme weather events (storms, hurricanes)</li>
+          <li>Damage caused by other contractors or homeowners</li>
+          <li>Normal wear and tear over time</li>
+          <li>Pre-existing structural issues (settling, water damage)</li>
+          <li>Surfaces we explicitly excluded in the original estimate</li>
+          <li>Damage from cleaning with harsh chemicals or abrasives</li>
+          <li>Color fade beyond manufacturer paint specifications</li>
+          <li>Furniture, fixture, or landscape damage caused by clients</li>
+          <li>Work modified or altered after our completion</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ HOW IT WORKS ═══════ -->
+<section class="process">
+  <div class="container">
+    <div class="process-header">
+      <span class="eyebrow on-dark">How to Claim</span>
+      <h2>Three Simple Steps</h2>
+      <p>If something is not right with our workmanship, here is exactly how to get it fixed.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="step-number">01</div>
+        <h4>Call or Email Us</h4>
+        <p>Reach out at (207) 890-7305 or Putnamcoastalpainting@gmail.com. Send a photo of the issue and your project completion date if possible.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">02</div>
+        <h4>We Inspect Within 7 Days</h4>
+        <p>Meghan or Jordan will personally visit your home to assess the issue. We do not send junior staff or third parties.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">03</div>
+        <h4>We Fix It on Us</h4>
+        <p>If it is a covered workmanship issue, we schedule the repair at no cost to you. Materials, labor, cleanup all included.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FAQ ═══════ -->
+<section class="faq">
+  <div class="container">
+    <div class="faq-header">
+      <span class="eyebrow">Warranty Questions</span>
+      <h2>Frequently Asked Questions</h2>
+      <p>Straight answers about our 5-Year Workmanship Warranty and how it protects your investment.</p>
+    </div>
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary>How long is the warranty valid?</summary>
+        <div class="faq-answer">Our Workmanship Warranty is valid for 5 full years from the date your project is completed. The warranty period begins the day we finish the final walkthrough with you.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is the warranty transferable if I sell my home?</summary>
+        <div class="faq-answer">Yes. Our warranty transfers automatically to new homeowners for the remaining coverage period. Just provide the new owner with your original project paperwork. No paperwork or fees required from us.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Do I need to keep paperwork for the warranty?</summary>
+        <div class="faq-answer">We strongly recommend it. We keep your full project records on file as well, but having your own copy speeds up the claim process. Every customer receives a written warranty certificate at project completion.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What if the paint manufacturer's warranty conflicts with yours?</summary>
+        <div class="faq-answer">Our workmanship warranty covers our application. Paint products themselves are covered separately by Sherwin-Williams, Benjamin Moore, or Johnson Paint manufacturer warranties. If a paint product fails, we help you file with the manufacturer at no charge.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Will you come back for small touch-ups under warranty?</summary>
+        <div class="faq-answer">Yes. We do not have minimum thresholds for warranty work. If something we did is not holding up, we come back regardless of how minor it seems. Your reputation with your neighbors matters to us.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What if I have not maintained the paint properly?</summary>
+        <div class="faq-answer">Reasonable use is expected. Standard cleaning with gentle products is fine. Pressure-washing exterior paint within the first year, scrubbing interior paint with abrasive chemicals, or otherwise damaging the surface may void specific warranty claims. We will assess case by case.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How quickly do you respond to warranty claims?</summary>
+        <div class="faq-answer">We inspect every warranty claim within 7 business days of being contacted. Most repairs are scheduled within 2 to 4 weeks depending on weather and our current schedule. Urgent issues are prioritized.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Does the warranty cover commercial projects too?</summary>
+        <div class="faq-answer">Yes. Our 5-Year Workmanship Warranty applies to both residential and commercial painting projects across York County and southern Cumberland County.</div>
+      </details>
+
     </div>
   </div>
 </section>
@@ -664,16 +689,16 @@
 <!-- ═══════ FINAL CTA ═══════ -->
 <section class="cta-slab">
   <div class="container">
-    <span class="eyebrow on-dark">Let's Talk About Your Project</span>
-    <h2>Your Home Deserves a Team You Can <span class="accent">Trust.</span></h2>
-    <p>Free, no-obligation estimate. Detailed, written quote. No pressure, no salespeople, no surprises. That is how we do it.</p>
+    <span class="eyebrow on-dark">Hire Painters Who Stand Behind the Work</span>
+    <h2>Get Your <span class="accent">5-Year</span> Warranty With Every Project.</h2>
+    <p>Free, no-obligation estimate. Detailed written quote. 5-year workmanship warranty in writing on every job we complete. That is how Putnam Coastal Painting earns trust in York County.</p>
     <div class="cta-buttons">
       <a href="/free-estimate" class="btn btn-white">Get a Free Estimate</a>
-      <a href="/past-work" class="btn btn-ghost">See Our Past Work</a>
+      <a href="/about" class="btn btn-ghost">Meet Meghan & Jordan</a>
     </div>
     <a href="tel:2078907305" class="cta-phone">
       <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-      Or call us directly · <span>(207) 890-7305</span>
+      Call us directly · <span>(207) 890-7305</span>
     </a>
   </div>
 </section>
